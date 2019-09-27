@@ -124,11 +124,13 @@ void solvePuzzle(vector< vector<int>> initial, int x, int y,
             {
                 if (checkMoves(min->x + row[i], min->y + col[i], N))
                 {
+                    // create new child node
                     Node* child = newNode(min->matrix, min->x,
                                           min->y, min->x + row[i],
                                           min->y + col[i],
                                           min->level + 1, min);
 
+                    
                     if (min->level != 0) {
                         if (child->x == min->parent->x && child->y == min->parent->y ) {
                             continue;
